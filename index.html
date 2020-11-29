@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Student Card Generator</title>
+</head>
+<body>
+
+  <div class="back">
+    <form>
+      <h3>Please fill in the form</h3>
+
+      <label>FUll Name</label>
+      <input type="text" id="inName" placeholder="">
+      <label>Date of birth</label>
+      <input type="date" id="inBirth" placeholder="birth...">
+      <label>Field</label>
+      <input type="text" id="inField" placeholder="Field...">
+      <label>Year</label>
+      <input type="number" id="inYear" placeholder="Year...">
+      <label>Subscription number</label>
+      <input type="number" id="inNum" placeholder="sub n°">
+
+
+      <label for="file" class="upload">Upload an Image</label>
+      <br>
+      <span>CHoose one that describes you pefectly</span>
+      <input type="file" id="file" accept="image/*"
+                                   onchange="loadImage(event)">
+    </form>
+
+    <button type="submit" id="preview">Preview</button>
+
+    <div class="container">
+
+      <canvas class="card" id="result">
+        <header id="head">
+          <div class="camp">
+            <h4>Campus Card</h4>
+            <span>Undergraduate</span>
+          </div>
+          <img src="lorem.jpg" id="logo" alt="">
+        </header>
+
+        <div class="content">
+          <img src="" id="imgDisplayed">
+          <ul>
+            <li id="name"></li>
+            <li id="birth"></li>
+            <li id="fieldYear"></li>
+            <li>SubN° <span id="num"></span></li>
+          </ul>
+
+
+        </div>
+
+      </canvas>
+      <button id="down">Download</button>
+    </div>
+
+  </div>
+
+
+
+  <script src="main.js"></script>
+</body>
+</html>
