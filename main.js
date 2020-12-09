@@ -1,4 +1,21 @@
+// limit year input to 1 digit
+const inYear = document.getElementById("inYear");
+inYear.addEventListener('input', () => {
+ inYear.value = inYear.value.slice(0,inYear.maxLength)
+});
+// limit Subscription number input to 6 digit
+const inNum = document.getElementById("inNum");
+inNum.addEventListener('input', () => {
+ inNum.value = inNum.value.slice(0,inNum.maxLength)
+});
 
+// load image to browser
+function loadImage(event) {
+  const image = document.getElementById("imgDisplayed");
+  image.src = URL.createObjectURL(event.target.files[0]);
+}
+
+// preview result
 const preview = document.getElementById("preview");
 preview.addEventListener("click", prev);
 
@@ -29,12 +46,16 @@ function prev(){
   ctx.rect(0, 0, 300, 56);
   ctx.fill();
 
+
   ctx.fillStyle = "#fff";
   ctx.fillText("Campus Card", 10, 25);
   ctx.font = "16px Arial";
   ctx.fillText("Undergraduate", 15, 45);
   const logo = document.getElementById("logo");
   ctx.drawImage(logo, 230, 3, 50, 50);
+
+  ctx.fillStyle = "#fff";
+  ctx.fillRect(0, 56, 300, 150);
 
   ctx.fillStyle = "#000";
   ctx.fillText(name.innerHTML, 110, 90);
@@ -47,6 +68,8 @@ function prev(){
 
 }
 
+
+// download card
 const down = document.getElementById("down");
 down.addEventListener("click", function(){
 
@@ -60,9 +83,3 @@ down.addEventListener("click", function(){
   document.body.removeChild(a);
 
 });
-
-
-function loadImage(event) {
-  const image = document.getElementById("imgDisplayed");
-  image.src = URL.createObjectURL(event.target.files[0]);
-}
